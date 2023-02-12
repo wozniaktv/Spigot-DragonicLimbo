@@ -1,0 +1,13 @@
+name: DragonicLimbo
+version: '${project.version}'
+main: wozniaktv.dragoniclimbo.Main
+api-version: 1.19
+authors: [ WoZniaK_TV ]
+description: Sends players to the Limbo when they are AFK
+commands:
+  limboreload:
+    usage: /limboreload
+    description: "Should reload the config of the server"
+  afk:
+    usage: /afk
+    description: "Should send the player to the limbo server immediately"
