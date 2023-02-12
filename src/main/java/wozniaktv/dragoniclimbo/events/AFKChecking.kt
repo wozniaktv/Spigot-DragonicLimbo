@@ -82,6 +82,7 @@ class AFKChecking : Listener {
             AllowGoingBack(event.player).runTaskLater(plugin!!,100)
         }
     }
+    @EventHandler
     fun playerQuit(event: PlayerJoinEvent){
         if(plugin!!.config.getBoolean("isLimboServer")){
             plugin!!.canGoBack.remove(event.player)
