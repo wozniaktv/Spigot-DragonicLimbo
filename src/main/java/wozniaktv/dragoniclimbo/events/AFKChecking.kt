@@ -6,6 +6,7 @@ import org.bukkit.event.Listener
 import org.bukkit.event.inventory.InventoryClickEvent
 import org.bukkit.event.player.AsyncPlayerChatEvent
 import org.bukkit.event.player.PlayerCommandPreprocessEvent
+import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.event.player.PlayerMoveEvent
 import org.bukkit.plugin.java.JavaPlugin
 import wozniaktv.dragoniclimbo.Main
@@ -60,6 +61,15 @@ class AFKChecking : Listener {
         if(plugin!!.config.getBoolean("isLimboServer")) {
             event.isCancelled = true
             plugin!!.proxyAPI!!.sendPlayer(event.whoClicked as Player,"lobby")
+        }
+    }
+
+    @EventHandler
+    fun playerJoin(event: PlayerJoinEvent){
+        if(plugin!!.config.getBoolean("isLimboServer")){
+            event.player.isInvisible = true
+            event.player.isSilent = true
+            event.player.isCollidable = false
         }
     }
 
