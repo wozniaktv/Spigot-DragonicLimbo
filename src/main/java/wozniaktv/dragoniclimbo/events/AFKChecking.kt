@@ -10,6 +10,8 @@ import org.bukkit.event.player.PlayerCommandPreprocessEvent
 import org.bukkit.event.player.PlayerJoinEvent
 import org.bukkit.event.player.PlayerMoveEvent
 import org.bukkit.plugin.java.JavaPlugin
+import org.bukkit.potion.PotionEffect
+import org.bukkit.potion.PotionEffectType
 import wozniaktv.dragoniclimbo.Main
 import wozniaktv.dragoniclimbo.events.tasks.AllowGoingBack
 import wozniaktv.dragoniclimbo.format.Format
@@ -91,12 +93,14 @@ class AFKChecking : Listener {
             event.player.isCollidable = false
             event.player.sendTitle(Format.color("&d&lAFK"),Format.color("&fSei stato portato nel server &d&lLIMBO"),0,100,0)
             event.player.playSound(event.player, Sound.ENTITY_VILLAGER_CELEBRATE,100f,0f)
+            event.player.addPotionEffect(PotionEffect(PotionEffectType.WEAKNESS,22222222,255,false,false,false))
             AllowGoingBack(event.player).runTaskLater(plugin!!,100)
         }
     }
     @EventHandler
     fun playerQuit(event: PlayerJoinEvent){
         if(plugin!!.config.getBoolean("isLimboServer")){
+            event.player.removePotionEffect(PotionEffectType.WEAKNESS)
             plugin!!.canGoBack.remove(event.player)
         }
     }
