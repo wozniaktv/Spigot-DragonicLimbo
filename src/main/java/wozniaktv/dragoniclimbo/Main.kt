@@ -12,6 +12,7 @@ class Main : JavaPlugin() {
 
     var afkMinutes : HashMap<Player,Int> = HashMap()
     var proxyAPI: ProxyAPI ?= null
+    var canGoBack : HashMap<Player,Boolean> = HashMap()
 
     override fun onEnable() {
         proxyAPI = ProxyAPI()

@@ -6,7 +6,7 @@
 
     <groupId>wozniaktv</groupId>
     <artifactId>DragonicLimbo</artifactId>
-    <version>RELEASE-1.1</version>
+    <version>RELEASE-1.2</version>
     <packaging>jar</packaging>
 
     <name>DragonicLimbo</name>
