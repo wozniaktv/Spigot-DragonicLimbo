@@ -31,7 +31,10 @@ class AFKChecking : Listener {
         if(plugin!!.config.getBoolean("isLimboServer")){
             event.isCancelled = true
             if(!plugin!!.canGoBack.contains(event.player)) return
-            if(plugin!!.canGoBack[event.player]!!) plugin!!.proxyAPI!!.sendPlayer(event.player,"lobby")
+            if(plugin!!.canGoBack[event.player]!!) {
+                plugin!!.proxyAPI!!.sendPlayer(event.player,"lobby")
+                plugin!!.canGoBack.remove(event.player)
+            }
         }
     }
 
@@ -43,7 +46,10 @@ class AFKChecking : Listener {
         if(plugin!!.config.getBoolean("isLimboServer")){
             event.isCancelled = true
             if(!plugin!!.canGoBack.contains(event.player)) return
-            if(plugin!!.canGoBack[event.player]!!) plugin!!.proxyAPI!!.sendPlayer(event.player,"lobby")
+            if(plugin!!.canGoBack[event.player]!!){
+                plugin!!.proxyAPI!!.sendPlayer(event.player,"lobby")
+                plugin!!.canGoBack.remove(event.player)
+            }
         }
     }
 
@@ -55,7 +61,10 @@ class AFKChecking : Listener {
         if(plugin!!.config.getBoolean("isLimboServer")){
             event.isCancelled = true
             if(!plugin!!.canGoBack.contains(event.player)) return
-            if(plugin!!.canGoBack[event.player]!!) plugin!!.proxyAPI!!.sendPlayer(event.player,"lobby")
+            if(plugin!!.canGoBack[event.player]!!){
+                plugin!!.proxyAPI!!.sendPlayer(event.player,"lobby")
+                plugin!!.canGoBack.remove(event.player)
+            }
         }
     }
 
@@ -67,7 +76,10 @@ class AFKChecking : Listener {
         if(plugin!!.config.getBoolean("isLimboServer")) {
             event.isCancelled = true
             if(!plugin!!.canGoBack.contains(event.whoClicked)) return
-            if(plugin!!.canGoBack[event.whoClicked]!!) plugin!!.proxyAPI!!.sendPlayer(event.whoClicked as Player,"lobby")
+            if(plugin!!.canGoBack[event.whoClicked]!!){
+                plugin!!.proxyAPI!!.sendPlayer(event.whoClicked as Player,"lobby")
+                plugin!!.canGoBack.remove(event.whoClicked)
+            }
         }
     }
 
