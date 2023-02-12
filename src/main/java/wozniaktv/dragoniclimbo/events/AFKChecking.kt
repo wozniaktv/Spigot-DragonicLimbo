@@ -77,7 +77,7 @@ class AFKChecking : Listener {
             event.player.isInvisible = true
             event.player.isSilent = true
             event.player.isCollidable = false
-            event.player.sendTitle(Format.color("&dLimbo"),Format.color("&7Qui ci farai risparmiare risorse!"),0,100,0)
+            event.player.sendTitle(Format.color("&d&lAFK"),Format.color("&fSei stato portato nel server &d&lLIMBO"),0,100,0)
             event.player.playSound(event.player, Sound.ENTITY_VILLAGER_CELEBRATE,100f,0f)
             AllowGoingBack(event.player).runTaskLater(plugin!!,100)
         }
